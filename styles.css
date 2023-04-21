@@ -1,0 +1,326 @@
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Noto Sans', sans-serif;
+    color: #edede9;
+
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+img {
+  margin: 0;
+}
+
+body {
+  background-image: url(./images/alentejo.jpeg);
+  background-size: cover;
+  line-height: 2;
+  min-height: 100vh;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+
+a{
+  color: #edede9; 
+} 
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEADER*/
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  padding: 2rem 0;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-logo {
+  height: 70px;
+  border-radius: 50%;
+  margin: 20px;
+  position: absolute;
+}
+
+.header-logo:hover {
+  animation-name: spin;
+  animation-direction: alternate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-text {
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* HERO SECTION*/
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.hero > p{
+    font-size: 1.5rem;
+}
+
+/*CALL TO ACTION SECTION*/
+
+.call-to-action {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.cta-btn {
+  margin-left: 3em;
+}
+
+button {
+  background: #669bbc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #425168;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+/*DOG CARDS SECTION*/
+
+.dog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.dog-card {
+  background-color: rgba(53, 48, 48, 0.7);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 400px;
+  margin: 25px;
+  border-bottom: 7px solid #669bbc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.dog-card img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 5px double #669bbc;
+  padding: 5px;
+}
+
+.dog-card img:hover {
+  animation-name: spin;
+  animation-direction: alternate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dog-card__text {
+  padding-left: 10px;
+  line-height: 1.3;
+}
+
+.aka{
+    font-size: small;
+}
+
+.dog-card__text h2,
+p {
+  text-align: center;
+}
+
+/*DOG DAD SECTION*/
+
+.dog-dad {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.dog-dad__text {
+  margin-right: 20px;
+}
+
+.dog-dad__text > p {
+  font-size: 1.5rem;
+}
+
+.dog-dad > img {
+  max-width: 200px;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 0.75em 0.75em 0.75em rgba(214, 209, 209, 0.25),
+    0.125em 0.125em 0.25em rgba(214, 209, 209, 0.25);
+}
+
+/*PICTURES SECTION*/
+
+.pictures {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin: 2em 0;
+  padding: 2em 0;
+}
+
+.pictures > h2 {
+  margin-bottom: 1em;
+}
+
+.img-gallery {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-gallery > img {
+  height: 200px;
+  box-shadow: 0.75em 0.75em 0.75em rgba(214, 209, 209, 0.25),
+    0.125em 0.125em 0.25em rgba(214, 209, 209, 0.25);
+}
+
+.img-gallery > img:hover {
+  transform: scale(1.2);
+  transition: 0.7s ease-in-out;
+}
+
+/*FOOTER SECTION*/
+
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer > a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+footer > a:hover {
+  opacity: 0.7;
+}
+
+
+/* Mobile adjustments*/
+
+@media (max-width: 640px) {
+    h1{
+        font-size: 2.3rem;
+    }
+    
+    h2{
+        font-size: 1.7rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-logo {
+        position: relative;        
+      }
+
+    .hero > p{
+        font-size: 1rem;
+    }
+
+    .cta-text {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      
+      .cta-btn {
+        margin-left: 0;
+      }
+
+      .dog-dad__text {
+        margin-right: 0;
+      }
+
+    .pictures > h2{
+        font-size: 1.5rem;
+    }
+
+}
+
