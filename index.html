@@ -47,9 +47,9 @@
                 <h3>Want to know more about our breed?</h3>
                 <p>Visit the <strong>"Clube Português de Canicultura"</strong> web page.</p>
             </div>
-            <div class="cta-btn">
-                <a href="https://www.cpc.pt/racas/racas-portuguesas/cao-serra-aires/" target="_blank"><button>Click
-                        here!</button></a>
+            <div>
+                <a href="https://www.cpc.pt/racas/racas-portuguesas/cao-serra-aires/" target="_blank"><button class="cta-btn">Click
+                        here !</button></a>
             </div>
         </section>
 
@@ -59,27 +59,43 @@
                 <div class="dog-card__text">
                     <h2>I'm Chewie!</h2>
                     <p class="aka">(aka Chewbacca)</p>
-                    <br>
-                    <p>My favourite things are:</p>
+                    <button id="chewie-button">Know More</button>
+                </div>
+            </div>
+            <div class="modal card chewie">
+                <div class="modal__content">
+                    <img class="header-logo" src="./images/favicon.ico" alt="dog paw logo">
+                    <h2>My favourite things are:</h2>
                     <ul>
-                        <li>Play with my bro Spock</li>
-                        <li>Belly rubs...mmm </li>
+                        <li>Play with my bro Spock.</li>
+                        <li>Belly rubs ... mmm </li>
                         <li>Swim on the lake.</li>
                     </ul>
+                </div>
+                <div class="modal__actions">
+                    <button class="btn btn--modal" id="chewie-cancel">Exit</button>
                 </div>
             </div>
             <div class="dog-card animate__animated animate__fadeInRight">
                 <img src="./images/spock.jpg" alt="">
                 <div class="dog-card__text">
                     <h2>I'm Spock!</h2>
-                    <p class="aka">(aka Mr Spock)</p>
-                    <br>
-                    <p>My favourite things are:</p>
+                    <p class="aka">(aka Mr Spock)</p>                    
+                    <button id="spock-button">Know More</button>
+                </div>
+            </div>
+            <div class="modal card spock">
+                <div class="modal__content">
+                    <img class="header-logo" src="./images/favicon.ico" alt="dog paw logo">
+                    <h2>My favourite things are:</h2>
                     <ul>
-                        <li>Play with my bro Chewie</li>
-                        <li>Tasty treats...yummm</li>
-                        <li>Bark at strangers.</li>
+                        <li>Play with my bro Chewie.</li>
+                        <li>Tasty treats ... yummm</li>
+                        <li>Bark at strangers!</li>
                     </ul>
+                </div>
+                <div class="modal__actions">
+                    <button class="btn btn--modal" id="spock-cancel">Exit</button>
                 </div>
             </div>
         </section>
