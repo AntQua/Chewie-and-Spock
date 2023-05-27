@@ -9,6 +9,7 @@ function toggleDarkMode() {
 darkModeToggleBtn.addEventListener('click', toggleDarkMode);
 
 
+
 // DOG CARDS MODALS -------------------------------------------------------------------
 
 const backdrop = document.getElementById('backdrop');
@@ -139,5 +140,3 @@ function close(){
 }
 
 overlayClose.addEventListener('click', close);
-
-
