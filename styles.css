@@ -402,7 +402,6 @@ p {
 /*PICTURES SECTION*/
 
 .pictures {
-  background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
   margin: 2em 0;
   padding: 2em 0;
@@ -412,29 +411,108 @@ p {
   margin-bottom: 1em;
 }
 
-.img-gallery {
+.gallery {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, 200px);
+  /*since we dont know how many do we need we use auto-fill, as many as it is wide*/
+  grid-template-columns: repeat(auto-fill, 100px);
+  /*size the rows implicitly*/
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
   justify-content: center;
+}
+
+.item {
+  overflow: hidden;
+  /*use the grid to manage the overlaping, instead of using position absolute*/
+  /*overlap the yellow screen on top of the image when we hoover the image to be selected*/
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+}
+
+.item.h1 {
+  grid-column: span 2;
+}
+
+.item.v1 {
+  grid-row: span 2;
+}
+
+.item img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item__overlay {
+  background: #ffc60032;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: relative;
+  /*center the View button in the middle of the photo*/
+  display: grid;
+  justify-items: center;
   align-items: center;
+  /*Slide down the yellow screen from the image*/
+  transition: 0.3s;
+  transform: translateY(100%);
 }
 
-.img-gallery > img {
-  height: 200px;
-  box-shadow: 0.75em 0.75em 0.75em rgba(214, 209, 209, 0.25),
-    0.125em 0.125em 0.25em rgba(214, 209, 209, 0.25);
+.item__overlay button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
 }
 
-.img-gallery > img:hover {
-  transform: scale(1.2);
-  transition: 0.7s ease-in-out;
+/*when the item(image) is hovered, then the item overlay(yellow screen) will cover the item*/
+.item:hover .item__overlay {
+  transform: translateY(0);
+}
+
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+}
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.overlay .overlay-inner {
+  background: white;
+  width: 700px;
+  padding: 20px;
+}
+
+.overlay img {
+  width: 100%;
+}
+
+
+.close {
+  background: none;
+  color: black;
+  border: 0;
 }
 
 /*FOOTER SECTION*/
 
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
   padding: 2rem 0;
 }
@@ -448,49 +526,70 @@ footer > a:hover {
 }
 
 
+
 /* Mobile adjustments*/
 
 @media (max-width: 640px) {
-    h1{
-        font-size: 2.3rem;
-    }
-    
-    h2{
-        font-size: 1.7rem;
-    }
+  h1 {
+    font-size: 2.3rem;
+  }
 
-    p{
-        font-size: 1rem;
-    }
+  h2 {
+    font-size: 1.7rem;
+  }
 
-    header {
-        flex-direction: column;
-    }
+  p {
+    font-size: 1.2rem;
+  }
 
-    .header-logo {
-        position: relative;        
-      }
+  header {
+    flex-direction: column;
+  }
 
-    .hero > p{
-        font-size: 1rem;
-    }
+  .header-logo {
+    position: relative;
+  }
 
-    .cta-text {
-        text-align: center;
-        padding-bottom: 20px;
-      }
-      
-      .cta-btn {
-        margin-left: 0;
-      }
+  .hero > p {
+    font-size: 1.2rem;
+  }
 
-      .dog-dad__text {
-        margin-right: 0;
-      }
+  .header-text {
+    margin-left: 0px;
+  }
 
-    .pictures > h2{
-        font-size: 1.5rem;
-    }
+  .dm {
+    margin-right: 0px;
+  }
 
+  .cta-text {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .cta-btn {
+    margin-left: 0;
+  }
+
+  .modal__content {
+    font-size: 1.2rem; 
+  }
+  .modal__content h2{
+    font-size: 1.5rem; 
+  }
+  .modal__content img{
+    align-self: center; 
+  }
+
+  .dog-dad__text {
+    margin-right: 0;
+  }
+
+  .pictures > h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay .overlay-inner {
+    width: 500px;
+  }
 }
-
